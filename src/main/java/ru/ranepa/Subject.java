@@ -1,6 +1,14 @@
 package ru.ranepa;
 
 public class Subject {
-    private static long TeacherId;
-    private static String subject;
+    private final String name;
+
+    public Subject(String name){
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
 }

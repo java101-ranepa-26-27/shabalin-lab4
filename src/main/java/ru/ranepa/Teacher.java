@@ -9,6 +9,6 @@ public class Teacher extends Person{
     }
 
     public String report() {
-        return "Преподаватель " + getName() + " (№" + getId() + "): " + subject;
+        return "Преподаватель " + getName() + " (№" + getId() + "): " + subject.getName();
     }
 }

@@ -14,11 +14,22 @@ public class Journal {
         return new ArrayList<>(people);
     }
 
-    public Person findId(long id){
+    public Person findId(long id) {
         for (Person person : people) {
-            if (person.getId() == id);
-            return person;
+            if (person.getId() == id) ;{
+                return person;
+            }
         }
+        throw new IllegalArgumentException("человек не найден");
     }
+    public Person findName(String name){
+        for (Person person : people) {
+            if(person.getName().equals(name)){
+                return person;
+            }
+        }
+        throw new IllegalArgumentException("человек не найден");
+    }
+
 
 }

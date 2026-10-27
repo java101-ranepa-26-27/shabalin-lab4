@@ -1,6 +1,6 @@
 package ru.ranepa;
 
-public class Person {
+public abstract class Person {
     private final long id;
     private final String name;
 
@@ -16,4 +16,6 @@ public class Person {
     public String getName() {
         return name;
     }
+
+    public abstract String report();
 }
