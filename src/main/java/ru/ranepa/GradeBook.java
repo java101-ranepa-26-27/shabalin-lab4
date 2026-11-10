@@ -3,7 +3,7 @@ package ru.ranepa;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GradeBook {
+public class GradeBook implements GradeView{
     private final long studentId;
     private final List<Integer> grades = new ArrayList<>();
 
@@ -20,6 +20,10 @@ public class GradeBook {
             throw new IllegalArgumentException("оценка должна быть от 2 до 5");
         }
         grades.add(grade);
+    }
+
+    public List<Integer> getGrades() {
+        return new ArrayList<>(grades);
     }
 
     public double average() {

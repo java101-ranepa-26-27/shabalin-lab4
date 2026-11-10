@@ -1,29 +1,21 @@
 package ru.ranepa;
 
-public class Student {
-    private final long id;
-    private final String name;
-    private final GradeBook grades;
+import java.util.List;
 
-    Student(long id, String name, GradeBook grades) {
-        this.id = id;
-        this.name = name;
-        this.grades = grades;
-    }
+public class Student extends Person{
+    private final GradeView gradeView;
 
-    public long getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
+    public Student(long id, String name, GradeBook gradeView) {
+        super(id, name);
+        this.gradeView = gradeView;
     }
 
     public double average() {
-        return grades.average();
+        return gradeView.average();
     }
 
     public String report() {
-        return "Студент " + name + " (№" + id + "): " + grades.describe();
+        List<Integer> grades = gradeView.getGrades();
+        return "Студент " + getName() + " (№" + getId() + "): " + grades+ "Средний:" + average();
     }
 }
